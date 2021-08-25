@@ -40,7 +40,7 @@ _**Sqills** A user will be able to sign in or register for the app. Upon signing
 - _Login_
 - _CRUD_
 -_Tailind_
--_Media Query
+-_Media Query_
 
 <br>
 
