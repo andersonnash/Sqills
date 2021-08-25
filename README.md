@@ -161,7 +161,7 @@ src
 #### ERD Model
 
 
-[ERD Sqills.pdf](https://github.com/andersonnash/sqills/files/7048096/Sqills.pdf)
+![ERD - Sqills (1)](https://user-images.githubusercontent.com/82549011/130820802-b7ef125a-10e2-4dca-8268-7a4072abe487.png)
 
 <br>
 
