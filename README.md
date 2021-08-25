@@ -61,8 +61,7 @@ _**Sqills** A user will be able to sign in or register for the app. Upon signing
 
 #### Wireframes
 
-![Sqills - Wireframe](https://user-images.githubusercontent.com/82549011/130812580-6dabb59a-b823-4d2a-b0b8-f05205c17eb6.png)
-
+![Sqills Wireframe](https://user-images.githubusercontent.com/82549011/130843056-c989019b-32ba-4607-bc70-8e1183c5bf80.png)
 
 
 
