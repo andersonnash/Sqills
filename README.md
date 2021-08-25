@@ -131,12 +131,12 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-|     |    L     |     3 hrs      |     2 hrs     |       |
+| Pitch presentation    |    L     |     .5 hrs      |          |       |
 |  Backend CRUD       |    H     |     3 hrs      |        |     TBD     |
 | Auth                |    H     |     2 hrs      |        |     TBD     |
 | Seeding Data        |    H     |     2 hrs      |          |     TBD     |
 | Creating Frontend Comp |    H     |     3 hrs      |          |     TBD     |
-| frontend CRUD       |    H     |     3 hrs      |          |     TBD     |
+| Frontend CRUD       |    H     |     3 hrs      |          |     TBD     |
 | Landing Page Layout |    H     |     1 hrs      |        |     TBD     |
 | Detail Page Layout |    H     |     1 hrs      |         |     TBD     |
 | Edit Page Layout   |    H     |     1 hrs      |          |     TBD     |
@@ -144,6 +144,7 @@ src
 | Create Page Layout |    H     |    1 hrs      |          |     TBD     |
 | Navbar             |    H     |     1 hrs      |          |     TBD     |
 | Basic CSS          |    H     |     3 hrs      |          |     TBD     |
+| Tailwind         |    H     |     3 hrs      |          |     TBD     |
 | Header             |    H     |     2 hrs      |          |     TBD     |
 | Advanced Landing Page |    H     |     3 hrs      |          |     TBD     |
 | Advanced Detail Page |    H     |     3 hrs      |          |     TBD     |
