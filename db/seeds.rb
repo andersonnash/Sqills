@@ -61,23 +61,23 @@ Post.create!(
 )
 
 Post.create!(
-  title: 'Climbing in Yosemite'
-  description:'<p>Hammock bicycle rights hexagon food truck messenger bag occupy chicharrones lyft 3 wolf moon shabby chic migas fashion axe listicle prism.</p>',
+  title: 'Climbing in Yosemite',
+  description: '<p>Hammock bicycle rights hexagon food truck messenger bag occupy chicharrones lyft 3 wolf moon shabby chic migas fashion axe listicle prism.</p>',
   image_url: 'https://www.nps.gov/yose/planyourvisit/images/climber-on-el-cap-main-page-web.jpg?maxwidth=1200&maxheight=1200&autorotate=false',
   user: @nash,
   category: @climbing
 )
 Post.create!(
-  title: "Pool Time",
+  title: 'Pool Time',
   description: '<p>Ennui schlitz etsy, gochujang trust fund biodiesel fixie freegan tousled bushwick polaroid deep v.</p>',
   image_url: 'https://images.immediate.co.uk/production/volatile/sites/34/2020/07/How-to-train-and-prepare-for-your-first-Ironman-swim-7f5185d.jpg?quality=90&resize=768,574',
   user: @cam,
   category: @swimming
 )
 Post.create!(
-  title: "Get Yer Run On",
-  description:'<p>Now, now. Perfectly symmetrical violence never solved anything.</p>',
-  image_url:'http://tri247.kinsta.cloud/wp-content/uploads/2016/12/andrew-greenleaf-ironman-703-run-700x394.jpg',
+  title: 'Get Yer Run On',
+  description: '<p>Now, now. Perfectly symmetrical violence never solved anything.</p>',
+  image_url: 'http://tri247.kinsta.cloud/wp-content/uploads/2016/12/andrew-greenleaf-ironman-703-run-700x394.jpg',
   user: @evan,
   category: @running
 )

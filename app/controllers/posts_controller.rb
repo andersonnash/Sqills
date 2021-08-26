@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts
+    render json: @posts, include: :category
   end
 
   # GET /posts/1
@@ -46,6 +46,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :description, :title, :image_url, :user_id)
+      params.require(:post).permit(:title, :description, :image_url, :user_id, :category_id)
     end
 end

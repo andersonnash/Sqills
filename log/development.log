@@ -265,3 +265,703 @@ FOREIGN KEY ("category_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(25666108891884300)[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/auth/verify" for ::1 at 2021-08-26 09:43:54 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/auth/verify"):
+  
+Started POST "/auth/verify" for ::1 at 2021-08-26 09:44:59 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/auth/verify"):
+  
+Started GET "/auth/verify" for ::1 at 2021-08-26 09:45:09 -0600
+Processing by AuthenticationController#verify as */*
+  Parameters: {"authentication"=>{"username"=>"Nash3", "password"=>"[FILTERED]", "email"=>"test3@test.com"}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 43ms (Views: 0.3ms | ActiveRecord: 29.6ms | Allocations: 8868)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 09:51:31 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user"=>"@shaz", "category"=>"@hiking"}}
+[31mUnpermitted parameters: :user, :category[0m
+Completed 422 Unprocessable Entity in 70ms (Views: 7.5ms | ActiveRecord: 23.8ms | Allocations: 11722)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 09:53:06 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+    },
+    "user":{
+        "Shaz"
+    },
+    "category":{
+        "hiking"
+    }
+}
+Processing by PostsController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 157)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (809: unexpected token at '{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+    },
+    "user":{
+        "Shaz"
+    },
+    "category":{
+        "hiking"
+    }
+}'):
+  
+app/controllers/posts_controller.rb:49:in `post_params'
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 09:54:06 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+    },
+    "user":{
+        "Shaz",
+    },
+    "category":{
+        "hiking"
+    }
+}
+Processing by PostsController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 137)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (809: unexpected token at '{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+    },
+    "user":{
+        "Shaz",
+    },
+    "category":{
+        "hiking"
+    }
+}'):
+  
+app/controllers/posts_controller.rb:49:in `post_params'
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 09:54:25 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+    }
+}
+Processing by PostsController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 141)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (809: unexpected token at '{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+    }
+}'):
+  
+app/controllers/posts_controller.rb:49:in `post_params'
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 09:55:51 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 36ms (Views: 0.8ms | ActiveRecord: 16.9ms | Allocations: 11078)
+
+
+Started POST "/categories" for ::1 at 2021-08-26 10:01:29 -0600
+Processing by CategoriesController#create as */*
+  Parameters: {"category"=>{"name"=>"Hiking"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mCategory Create (10.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Hiking"], ["created_at", "2021-08-26 16:01:29.743840"], ["updated_at", "2021-08-26 16:01:29.743840"]]
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+Completed 201 Created in 66ms (Views: 1.3ms | ActiveRecord: 35.7ms | Allocations: 6269)
+
+
+Started POST "/categories" for ::1 at 2021-08-26 10:02:41 -0600
+Processing by CategoriesController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}, "category"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 190)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: category
+Did you mean?  category
+               action
+               controller
+               post):
+  
+app/controllers/categories_controller.rb:49:in `category_params'
+app/controllers/categories_controller.rb:18:in `create'
+Started POST "/categories" for ::1 at 2021-08-26 10:02:55 -0600
+Processing by CategoriesController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>1}, "category"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 154)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: category
+Did you mean?  category
+               action
+               controller
+               post):
+  
+app/controllers/categories_controller.rb:49:in `category_params'
+app/controllers/categories_controller.rb:18:in `create'
+Started POST "/categories" for ::1 at 2021-08-26 10:04:45 -0600
+Processing by CategoriesController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1}, "category"=>{"category"=>1}}
+[31mUnpermitted parameter: :category[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2021-08-26 16:04:45.597975"], ["updated_at", "2021-08-26 16:04:45.597975"]]
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+Completed 201 Created in 9ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 1807)
+
+
+Started POST "/categories" for ::1 at 2021-08-26 10:05:10 -0600
+Processing by CategoriesController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1}, "category"=>{"category"=>"Swimming"}}
+[31mUnpermitted parameter: :category[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2021-08-26 16:05:10.242315"], ["updated_at", "2021-08-26 16:05:10.242315"]]
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+Completed 201 Created in 8ms (Views: 1.0ms | ActiveRecord: 1.1ms | Allocations: 1802)
+
+
+Started POST "/categories" for ::1 at 2021-08-26 10:05:58 -0600
+Processing by CategoriesController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1}, "category"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 158)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: category
+Did you mean?  category
+               action
+               controller
+               post):
+  
+app/controllers/categories_controller.rb:49:in `category_params'
+app/controllers/categories_controller.rb:18:in `create'
+Started POST "/categories" for ::1 at 2021-08-26 10:06:17 -0600
+Processing by CategoriesController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>1}, "category"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 154)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: category
+Did you mean?  category
+               action
+               controller
+               post):
+  
+app/controllers/categories_controller.rb:49:in `category_params'
+app/controllers/categories_controller.rb:18:in `create'
+Started POST "/categories" for ::1 at 2021-08-26 10:06:32 -0600
+Processing by CategoriesController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>"Hiking"}, "category"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 154)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: category
+Did you mean?  category
+               action
+               controller
+               post):
+  
+app/controllers/categories_controller.rb:49:in `category_params'
+app/controllers/categories_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 10:06:52 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>"Hiking"}}
+[31mUnpermitted parameter: :category[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 11ms (Views: 1.3ms | ActiveRecord: 1.5ms | Allocations: 2448)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 10:07:45 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1}, "category"=>{"category"=>"Hiking"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 9ms (Views: 1.5ms | ActiveRecord: 0.8ms | Allocations: 2354)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 10:07:54 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1}, "category"=>{"category"=>1}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 11ms (Views: 1.1ms | ActiveRecord: 0.8ms | Allocations: 2351)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 10:10:47 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+  "user_id": 1,
+  "category": 1
+    },
+
+}
+Processing by PostsController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 145)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (809: unexpected token at '{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+  "user_id": 1,
+  "category": 1
+    },
+
+}'):
+  
+app/controllers/posts_controller.rb:49:in `post_params'
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 10:10:54 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>1}}
+[31mUnpermitted parameter: :category[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 14ms (Views: 1.1ms | ActiveRecord: 3.0ms | Allocations: 2380)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 10:11:21 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>"1"}}
+[31mUnpermitted parameter: :category[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 9ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 2382)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 10:12:09 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>1}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 8.1ms | Allocations: 4181)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Category(#14800) expected, got 1 which is an instance of Integer(#2480)):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 10:12:59 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+  "user_id": 1,
+    "category":{
+        "id": 1
+    } 
+}
+Processing by PostsController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (809: unexpected token at '{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+  "user_id": 1,
+    "category":{
+        "id": 1
+    } 
+}'):
+  
+app/controllers/posts_controller.rb:49:in `post_params'
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 10:13:58 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+  "user_id": 1,
+    "category_id":{
+        "id": 1
+    }
+}
+Processing by PostsController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 141)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (809: unexpected token at '{ 
+"post": {
+   "title": "Hiking with the homies",
+  "description": "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.",
+  "image_url": "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+  "user_id": 1,
+    "category_id":{
+        "id": 1
+    }
+}'):
+  
+app/controllers/posts_controller.rb:49:in `post_params'
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 10:14:35 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1}, "category_id"=>{"category"=>1}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 35ms (Views: 0.8ms | ActiveRecord: 6.7ms | Allocations: 7090)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 10:14:53 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1}, "id"=>{"category"=>1}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 13ms (Views: 0.9ms | ActiveRecord: 1.2ms | Allocations: 2359)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 10:15:05 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1}, "id"=>{"category"=>"Hiking"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 10ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 2373)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 10:15:17 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1}, "category_id"=>{"category"=>"Hiking"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 8ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 2355)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 10:16:57 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>"Hiking"}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 233)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Category(#14800) expected, got "Hiking" which is an instance of String(#2460)):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 10:17:23 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}}
+[31mUnpermitted parameter: :category_id[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 11ms (Views: 1.0ms | ActiveRecord: 2.5ms | Allocations: 2384)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 10:17:29 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>1}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Category(#14800) expected, got 1 which is an instance of Integer(#2480)):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 10:17:50 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>"1"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Category(#14800) expected, got "1" which is an instance of String(#2460)):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 10:18:11 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>"hiking"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Category(#14800) expected, got "hiking" which is an instance of String(#2460)):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 10:18:47 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category"=>"hiking"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Category(#14800) expected, got "hiking" which is an instance of String(#2460)):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 10:19:49 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mPost Create (6.4ms)[0m  [1m[32mINSERT INTO "posts" ("description", "title", "image_url", "user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["description", "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang."], ["title", "Hiking with the homies"], ["image_url", "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"], ["user_id", 1], ["category_id", 1], ["created_at", "2021-08-26 16:19:50.066938"], ["updated_at", "2021-08-26 16:19:50.066938"]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 201 Created in 50ms (Views: 0.7ms | ActiveRecord: 24.4ms | Allocations: 13426)
+
+
+Started GET "/categories" for ::1 at 2021-08-26 10:33:15 -0600
+Processing by CategoriesController#index as */*
+  Parameters: {"category"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}}
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 33ms (Views: 32.6ms | ActiveRecord: 14.6ms | Allocations: 3063)
+
+
+Started GET "/categories/posts" for ::1 at 2021-08-26 10:33:53 -0600
+Processing by CategoriesController#show as */*
+  Parameters: {"category"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}, "id"=>"posts"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:44:in `set_category'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms | Allocations: 661)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=posts):
+  
+app/controllers/categories_controller.rb:44:in `set_category'
+Started GET "/categories/" for ::1 at 2021-08-26 10:33:59 -0600
+Processing by CategoriesController#index as */*
+  Parameters: {"category"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 882)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 10:34:26 -0600
+Processing by PostsController#index as */*
+  Parameters: {"category"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}, "post"=>{}}
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 2.1ms | Allocations: 880)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 10:36:05 -0600
+Processing by PostsController#index as */*
+  Parameters: {"category"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}, "post"=>{}}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 6.9ms | ActiveRecord: 11.1ms | Allocations: 3948)
+
+
+Started POST "/posts" for ::1 at 2021-08-26 10:37:36 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mPost Create (11.7ms)[0m  [1m[32mINSERT INTO "posts" ("description", "title", "image_url", "user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["description", "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang."], ["title", "Hiking with the homies"], ["image_url", "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"], ["user_id", 1], ["category_id", 1], ["created_at", "2021-08-26 16:37:36.436662"], ["updated_at", "2021-08-26 16:37:36.436662"]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 35.9ms | Allocations: 16802)
+
+
+  
+NoMethodError (undefined method `categories' for #<Post id: 2, description: "I'm baby chartreuse squid hoodie four dollar toast...", title: "Hiking with the homies", image_url: "https://images.unsplash.com/photo-1551632811-56173...", user_id: 1, category_id: 1, created_at: "2021-08-26 16:37:36.436662000 +0000", updated_at: "2021-08-26 16:37:36.436662000 +0000">
+Did you mean?  category
+               category=):
+  
+app/controllers/posts_controller.rb:21:in `create'
+Started POST "/posts" for ::1 at 2021-08-26 10:38:10 -0600
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("description", "title", "image_url", "user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["description", "I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang."], ["title", "Hiking with the homies"], ["image_url", "https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"], ["user_id", 1], ["category_id", 1], ["created_at", "2021-08-26 16:38:10.154342"], ["updated_at", "2021-08-26 16:38:10.154342"]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 201 Created in 46ms (Views: 0.9ms | ActiveRecord: 17.9ms | Allocations: 13343)
+
+
+Started GET "/categories" for ::1 at 2021-08-26 10:38:34 -0600
+Processing by CategoriesController#index as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}, "category"=>{}}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 975)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 11:38:41 -0600
+Processing by PostsController#index as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 11.8ms | Allocations: 6235)
+
+
+  
+NoMethodError (undefined method `categories' for #<Post id: 1, description: "I'm baby chartreuse squid hoodie four dollar toast...", title: "Hiking with the homies", image_url: "https://images.unsplash.com/photo-1551632811-56173...", user_id: 1, category_id: 1, created_at: "2021-08-26 16:19:50.066938000 +0000", updated_at: "2021-08-26 16:19:50.066938000 +0000">
+Did you mean?  category
+               category=):
+  
+app/controllers/posts_controller.rb:8:in `index'
+Started GET "/posts" for ::1 at 2021-08-26 11:39:19 -0600
+Processing by PostsController#index as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 4.9ms | ActiveRecord: 12.5ms | Allocations: 4892)
+
+
+Started GET "/" for ::1 at 2021-08-26 11:44:37 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nashanderson/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nashanderson/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.2ms | Allocations: 459)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 2605)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 11:44:44 -0600
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.5ms | Allocations: 1018)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 11:45:32 -0600
+Processing by PostsController#index as */*
+  Parameters: {"post"=>{"title"=>"Hiking with the homies", "description"=>"I'm baby chartreuse squid hoodie four dollar toast wayfarers gochujang.", "image_url"=>"https://images.unsplash.com/photo-1551632811-561732d1e306?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "user_id"=>1, "category_id"=>1}}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 30ms (Views: 14.2ms | ActiveRecord: 15.4ms | Allocations: 9362)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 11:45:42 -0600
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.9ms | Allocations: 3196)
+
+
