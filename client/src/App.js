@@ -51,7 +51,7 @@ function App() {
           <Route path='/login'>
             <Login handleLogin={handleLogin} />
           </Route>
-          <Route path='/register'>
+          <Route path='/signup'>
             <SignUp handleRegister={handleRegister} />
           </Route>
           <Route path='/'>

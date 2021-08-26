@@ -1,5 +1,5 @@
 
-import api from './api-config';
+import api from './apiConfig';
 
 export const getAllPosts = async () => {
   const resp = await api.get('/posts');
