@@ -45,7 +45,7 @@ puts "#{User.count} users created."
 @climbing = Category.create!(name: 'climbing')
 @miscellaneous = Category.create!(name: 'miscellaneous')
 
-puts "#{Catagory.count} users created."
+puts "#{Category.count} categories created."
 
 # @format = [@hiking, @cycling, @mtb, @running, @swimming, @climbing]
 
