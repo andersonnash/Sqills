@@ -12,7 +12,6 @@ export default function PostEdit(props) {
   const { posts, handleUpdate } = props;
   const { id } = useParams();
 
-
   useEffect(()=> {
     const prefillFormData = () => {
       const postItem = posts.find((post) => post.id === Number(id));
@@ -66,6 +65,6 @@ export default function PostEdit(props) {
         />
       </label>
       <button>Submit</button>
-    </form>
+      </form>
   )
-}
+};
