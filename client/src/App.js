@@ -5,7 +5,6 @@ import MainContainer from './containers/MainContainer';
 import Layout from './components/Layout/Layout'
 import SignUp from "./views/SignUp/SignUp"
 import Login from "./views/SignIn/SignIn"
-import Home from "./views/Home/Home"
 import {
   loginUser,
   registerUser,

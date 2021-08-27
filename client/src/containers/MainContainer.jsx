@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 
 import { getAllPosts, postPosts, putPost, deletePost } from '../services/posts';
 import { getAllCategories } from '../services/categories';
@@ -9,6 +9,7 @@ import Posts from '../views/Posts/Posts'
 import PostCreate from '../views/PostCreate/PostCreate';
 import PostEdit from '../views/PostEdit/PostEdit'
 import PostDetail from '../views/PostDetail/PostDetail'
+import CategoryPosts from '../views/CategoryPosts/CategoryPosts'
 
 import React from 'react'
 
@@ -17,7 +18,6 @@ const MainContainer = (props) => {
   const [categories, setCategories] = useState([]);
   const { currentUser } = props
   const history = useHistory()
-  const { id } = useParams();
 
 
   useEffect(() => {
@@ -35,6 +35,8 @@ const MainContainer = (props) => {
     }
     fetchCategories();
   }, []);
+
+
 
   const handleCreate = async (formData) => {
     const postData = await postPosts(formData);
@@ -74,9 +76,12 @@ const MainContainer = (props) => {
         <Route path='/posts'>
           <Posts
             posts={posts}
-            // handleDelete={handleDelete}
+            handleDelete={handleDelete}
             currentUser={currentUser}
           />
+        </Route>
+        <Route exact path='/category/:id'>
+          <CategoryPosts />
         </Route>
       </Switch>
     </div>

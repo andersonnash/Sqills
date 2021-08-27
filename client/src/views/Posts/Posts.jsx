@@ -11,7 +11,7 @@ console.log(posts)
           <Link to={`/posts/${post.id}`}>
             <p>{post?.title}</p>
           </Link>
-          <img src={post?.image_url} />
+          <img src={post?.image_url} alt={post.title}/>
           <p>{post?.description}</p>
           {currentUser?.id === post.user_id && (
             <div>
