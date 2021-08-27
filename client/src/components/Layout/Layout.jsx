@@ -11,7 +11,10 @@ export default function Layout(props) {
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
-        <Link to='/signup'>Login/Register</Link>
+          <>
+          <Link to='/signup'>Register</Link>
+          <Link to='/Login'>Login</Link>
+        </>
       )}
       <hr />
       {currentUser && (

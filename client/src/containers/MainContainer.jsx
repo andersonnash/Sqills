@@ -59,7 +59,7 @@ const MainContainer = (props) => {
         <Route path='/categories'>
           <Categories categories={categories} />
         </Route>
-        <Route path='/posts/:id/edit'>
+        <Route path='/edit'>
           <PostEdit posts={posts} handleUpdate={handleUpdate} />
         </Route>
         <Route path='/posts/new'>

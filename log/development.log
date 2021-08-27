@@ -3073,3 +3073,846 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 2.4ms | Allocations: 667)
 
 
+Started GET "/categories" for ::1 at 2021-08-26 17:55:30 -0600
+Started GET "/auth/verify" for ::1 at 2021-08-26 17:55:30 -0600
+Started GET "/posts" for ::1 at 2021-08-26 17:55:30 -0600
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+Processing by PostsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mCategory Load (5.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 85ms (Views: 14.6ms | ActiveRecord: 14.4ms | Allocations: 11773)
+
+
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 65ms (Views: 38.3ms | ActiveRecord: 24.0ms | Allocations: 20672)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 69ms (Views: 0.3ms | ActiveRecord: 40.1ms | Allocations: 22497)
+
+
+Started GET "/posts/12" for ::1 at 2021-08-26 17:55:39 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"12"}
+Started GET "/categories" for ::1 at 2021-08-26 17:55:39 -0600
+Started GET "/posts" for ::1 at 2021-08-26 17:55:39 -0600
+Processing by CategoriesController#index as HTML
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-26 17:55:39 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (6.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCategory Load (3.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 6.4ms | Allocations: 3453)
+
+
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 3.0ms | Allocations: 3179)
+
+
+  [1m[36mPost Load (4.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 17.0ms | ActiveRecord: 8.9ms | Allocations: 7413)
+
+
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 63ms (Views: 0.3ms | ActiveRecord: 22.6ms | Allocations: 9459)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 17:57:39 -0600
+Processing by PostsController#index as HTML
+Started GET "/posts/12" for ::1 at 2021-08-26 17:57:39 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"12"}
+Started GET "/categories" for ::1 at 2021-08-26 17:57:39 -0600
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 1.0ms | Allocations: 1329)
+
+
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 1.7ms | Allocations: 3089)
+
+
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (4.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 24.4ms | ActiveRecord: 11.5ms | Allocations: 7031)
+
+
+Started GET "/posts/11" for ::1 at 2021-08-26 17:57:45 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 672)
+
+
+Started GET "/posts/11" for ::1 at 2021-08-26 17:59:50 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 668)
+
+
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 17:59:58 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:00:02 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:00:42 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:00:43 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started GET "/posts/11" for ::1 at 2021-08-26 18:00:56 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 667)
+
+
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:02:09 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:02:17 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:02:19 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:02:19 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:02:19 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started GET "/posts/11" for ::1 at 2021-08-26 18:02:21 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+Started GET "/posts" for ::1 at 2021-08-26 18:02:21 -0600
+Started GET "/categories" for ::1 at 2021-08-26 18:02:21 -0600
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-26 18:02:21 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (7.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Processing by CategoriesController#index as HTML
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 7.2ms | Allocations: 2398)
+
+
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (6.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (2.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 27ms (Views: 0.5ms | ActiveRecord: 3.4ms | Allocations: 4309)
+
+
+  [1m[36mCategory Load (3.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 44ms (Views: 26.9ms | ActiveRecord: 16.4ms | Allocations: 6900)
+
+
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 73ms (Views: 39.9ms | ActiveRecord: 32.6ms | Allocations: 8751)
+
+
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:02:23 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:02:29 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started GET "/posts" for ::1 at 2021-08-26 18:05:45 -0600
+Processing by PostsController#index as HTML
+Started GET "/categories" for ::1 at 2021-08-26 18:05:45 -0600
+Processing by CategoriesController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-26 18:05:45 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.3ms | Allocations: 1849)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mPost Load (4.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 1.4ms | Allocations: 2531)
+
+
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 24.1ms | ActiveRecord: 13.1ms | Allocations: 7492)
+
+
+Started GET "/categories" for ::1 at 2021-08-26 18:05:58 -0600
+Processing by CategoriesController#index as HTML
+Started GET "/posts" for ::1 at 2021-08-26 18:05:58 -0600
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-26 18:05:58 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mCategory Load (3.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 3.0ms | Allocations: 3028)
+
+
+  [1m[36mCategory Load (7.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 9.5ms | Allocations: 3565)
+
+
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 16.5ms | ActiveRecord: 10.8ms | Allocations: 6776)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 18:14:00 -0600
+Processing by PostsController#index as HTML
+Started GET "/categories" for ::1 at 2021-08-26 18:14:00 -0600
+Processing by CategoriesController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-26 18:14:00 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 62.5ms | ActiveRecord: 21.9ms | Allocations: 7865)
+
+
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 81ms (Views: 80.5ms | ActiveRecord: 26.1ms | Allocations: 12729)
+
+
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 78ms (Views: 0.3ms | ActiveRecord: 27.7ms | Allocations: 12149)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 18:14:00 -0600
+Processing by PostsController#index as HTML
+Started GET "/categories" for ::1 at 2021-08-26 18:14:00 -0600
+Processing by CategoriesController#index as HTML
+Started GET "/posts/11" for ::1 at 2021-08-26 18:14:00 -0600
+Started GET "/auth/verify" for ::1 at 2021-08-26 18:14:00 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+Processing by AuthenticationController#verify as HTML
+  [1m[36mCategory Load (9.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 7.7ms | ActiveRecord: 9.0ms | Allocations: 2254)
+
+
+  [1m[36mPost Load (18.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mPost Load (4.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 25ms (Views: 1.0ms | ActiveRecord: 4.9ms | Allocations: 3323)
+
+
+  [1m[36mCategory Load (5.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 49ms (Views: 23.5ms | ActiveRecord: 24.9ms | Allocations: 8571)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 56ms (Views: 0.7ms | ActiveRecord: 16.1ms | Allocations: 9440)
+
+
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:14:04 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started GET "/posts/11" for ::1 at 2021-08-26 18:14:23 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (3.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 691)
+
+
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:14:25 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started PUT "/categories/11/posts/" for ::1 at 2021-08-26 18:17:12 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/categories/11/posts"):
+  
+Started GET "/posts/11" for ::1 at 2021-08-26 18:18:30 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 667)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 18:22:51 -0600
+Processing by PostsController#index as HTML
+Started GET "/categories" for ::1 at 2021-08-26 18:22:51 -0600
+Processing by CategoriesController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-26 18:22:51 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (2.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (10.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 21.6ms | ActiveRecord: 16.4ms | Allocations: 5798)
+
+
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 68ms (Views: 34.1ms | ActiveRecord: 33.2ms | Allocations: 10134)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 81ms (Views: 6.1ms | ActiveRecord: 31.0ms | Allocations: 10318)
+
+
+Started GET "/posts/11" for ::1 at 2021-08-26 18:23:08 -0600
+Started GET "/categories" for ::1 at 2021-08-26 18:23:08 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+Processing by CategoriesController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-26 18:23:08 -0600
+Started GET "/posts" for ::1 at 2021-08-26 18:23:08 -0600
+Processing by AuthenticationController#verify as HTML
+Processing by PostsController#index as HTML
+  [1m[36mCategory Load (2.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 2.7ms | Allocations: 2266)
+
+
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 2.5ms | Allocations: 2789)
+
+
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 1.8ms | Allocations: 3329)
+
+
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 52ms (Views: 37.9ms | ActiveRecord: 13.9ms | Allocations: 9425)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 18:25:04 -0600
+Processing by PostsController#index as HTML
+Started GET "/posts/11" for ::1 at 2021-08-26 18:25:04 -0600
+Started GET "/categories" for ::1 at 2021-08-26 18:25:04 -0600
+Processing by CategoriesController#index as HTML
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+Started GET "/auth/verify" for ::1 at 2021-08-26 18:25:04 -0600
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Processing by AuthenticationController#verify as HTML
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 1.1ms | Allocations: 1896)
+
+
+  [1m[36mPost Load (8.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mPost Load (10.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 2526)
+
+
+  [1m[36mCategory Load (3.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 10.5ms | Allocations: 5140)
+
+
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 52ms (Views: 36.9ms | ActiveRecord: 14.5ms | Allocations: 8817)
+
+
+Started GET "/categories" for ::1 at 2021-08-26 18:25:37 -0600
+Started GET "/posts" for ::1 at 2021-08-26 18:25:37 -0600
+Processing by CategoriesController#index as HTML
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-26 18:25:37 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 1837)
+
+
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 3563)
+
+
+  [1m[36mCategory Load (2.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (4.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 9.5ms | ActiveRecord: 10.9ms | Allocations: 6798)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 18:25:48 -0600
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-26 18:25:48 -0600
+Started GET "/categories" for ::1 at 2021-08-26 18:25:48 -0600
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Processing by AuthenticationController#verify as HTML
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 1.2ms | Allocations: 2081)
+
+
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 2796)
+
+
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 14.3ms | ActiveRecord: 3.6ms | Allocations: 7562)
+
+
+Started GET "/posts" for ::1 at 2021-08-26 18:26:52 -0600
+Started GET "/auth/verify" for ::1 at 2021-08-26 18:26:52 -0600
+Processing by PostsController#index as HTML
+Started GET "/categories" for ::1 at 2021-08-26 18:26:52 -0600
+Processing by AuthenticationController#verify as HTML
+Processing by CategoriesController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 2076)
+
+
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.6ms | Allocations: 2581)
+
+
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 1.9ms | Allocations: 7050)
+
+
+Started GET "/posts/11" for ::1 at 2021-08-26 18:26:57 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 671)
+
+
+Started GET "/posts/11" for ::1 at 2021-08-26 18:27:02 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 668)
+
+
+Started GET "/posts/11" for ::1 at 2021-08-27 06:37:21 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 96ms (Views: 2.8ms | ActiveRecord: 46.5ms | Allocations: 2716)
+
+
+Started GET "/categories" for ::1 at 2021-08-27 06:38:16 -0600
+Started GET "/posts" for ::1 at 2021-08-27 06:38:16 -0600
+Processing by PostsController#index as HTML
+Processing by CategoriesController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-27 06:38:16 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (2.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (38.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 96ms (Views: 51.5ms | ActiveRecord: 43.6ms | Allocations: 5503)
+
+
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 178ms (Views: 166.6ms | ActiveRecord: 10.8ms | Allocations: 10135)
+
+
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 176ms (Views: 0.2ms | ActiveRecord: 18.6ms | Allocations: 10308)
+
+
+Started GET "/posts" for ::1 at 2021-08-27 06:40:39 -0600
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-27 06:40:39 -0600
+Processing by AuthenticationController#verify as HTML
+Started GET "/categories" for ::1 at 2021-08-27 06:40:39 -0600
+Processing by CategoriesController#index as HTML
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.9ms | Allocations: 1973)
+
+
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 12.0ms | Allocations: 3389)
+
+
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 25.9ms | ActiveRecord: 4.6ms | Allocations: 7748)
+
+
+Started POST "/posts" for ::1 at 2021-08-27 06:44:30 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"Getting my Reps in", "description"=>"Fun times hanging with the crew. ", "image_url"=>"https://www.climbing.com/wp-content/uploads/2015/03/featured-photo-rules.jpg"}}
+Completed 422 Unprocessable Entity in 22ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 2362)
+
+
+Started POST "/posts" for ::1 at 2021-08-27 06:44:38 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"Getting my Reps in", "description"=>"Fun times hanging with the crew. ", "image_url"=>"https://www.climbing.com/wp-content/uploads/2015/03/featured-photo-rules.jpg"}}
+Completed 422 Unprocessable Entity in 4ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 883)
+
+
+Started GET "/posts" for ::1 at 2021-08-27 06:49:30 -0600
+Processing by PostsController#index as HTML
+Started GET "/categories" for ::1 at 2021-08-27 06:49:30 -0600
+Processing by CategoriesController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-27 06:49:30 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (4.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 18.7ms | ActiveRecord: 9.0ms | Allocations: 5692)
+
+
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+Completed 200 OK in 83ms (Views: 71.3ms | ActiveRecord: 11.1ms | Allocations: 10214)
+
+
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 79ms (Views: 0.1ms | ActiveRecord: 12.6ms | Allocations: 10221)
+
+
+Started POST "/posts" for ::1 at 2021-08-27 06:49:32 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"", "description"=>"", "image_url"=>""}}
+Completed 422 Unprocessable Entity in 4ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 877)
+
+
+Started POST "/posts" for ::1 at 2021-08-27 06:51:47 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"Climbing Around", "description"=>"Fun times hanging with the crew. ", "image_url"=>"https://www.climbing.com/wp-content/uploads/2015/03/featured-photo-rules.jpg", "category"=>"Climbing"}}
+[31mUnpermitted parameter: :category[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 915)
+
+
+Started GET "/posts" for ::1 at 2021-08-27 06:52:42 -0600
+Processing by PostsController#index as HTML
+Started GET "/categories" for ::1 at 2021-08-27 06:52:42 -0600
+Processing by CategoriesController#index as HTML
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 1.2ms | Allocations: 1931)
+
+
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 5.2ms | Allocations: 6120)
+
+
+Started POST "/posts" for ::1 at 2021-08-27 06:53:09 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"Climbing Around", "description"=>"Fun times hanging with the crew. ", "image_url"=>"https://www.climbing.com/wp-content/uploads/2015/03/featured-photo-rules.jpg", "category"=>"Climbing"}}
+[31mUnpermitted parameter: :category[0m
+Completed 422 Unprocessable Entity in 7ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 912)
+
+
+Started GET "/posts" for ::1 at 2021-08-27 07:01:45 -0600
+Started GET "/categories" for ::1 at 2021-08-27 07:01:45 -0600
+Processing by CategoriesController#index as HTML
+Processing by PostsController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 75ms (Views: 74.7ms | ActiveRecord: 46.0ms | Allocations: 5755)
+
+
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 83ms (Views: 82.7ms | ActiveRecord: 40.6ms | Allocations: 9425)
+
+
+Started GET "/categories" for ::1 at 2021-08-27 07:03:52 -0600
+Started GET "/posts" for ::1 at 2021-08-27 07:03:52 -0600
+Processing by CategoriesController#index as HTML
+Processing by PostsController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.5ms | Allocations: 1509)
+
+
+  [1m[36mPost Load (6.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 16.7ms | ActiveRecord: 10.8ms | Allocations: 5579)
+
+
+Started POST "/auth/login" for ::1 at 2021-08-27 07:08:19 -0600
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"Nash", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Nash"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 286ms (Views: 0.7ms | ActiveRecord: 1.2ms | Allocations: 998)
+
+
+Started GET "/posts" for ::1 at 2021-08-27 07:08:20 -0600
+Processing by PostsController#index as HTML
+Started GET "/categories" for ::1 at 2021-08-27 07:08:20 -0600
+Processing by CategoriesController#index as HTML
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (7.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 2.6ms | ActiveRecord: 7.1ms | Allocations: 2436)
+
+
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 11.4ms | ActiveRecord: 5.8ms | Allocations: 6244)
+
+
+Started GET "/posts/11" for ::1 at 2021-08-27 07:08:28 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 671)
+
+
+Started POST "/posts" for ::1 at 2021-08-27 07:08:53 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"Climbing Around", "description"=>"Fun times hanging with the crew. ", "image_url"=>"https://www.climbing.com/wp-content/uploads/2015/03/featured-photo-rules.jpg", "category"=>"Climbing"}}
+[31mUnpermitted parameter: :category[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 912)
+
+
+Started GET "/posts/14" for ::1 at 2021-08-27 07:14:46 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 54ms (Views: 0.8ms | ActiveRecord: 19.7ms | Allocations: 2709)
+
+
+Started GET "/posts/11" for ::1 at 2021-08-27 07:14:51 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 668)
+
+
+Started GET "/categories" for ::1 at 2021-08-27 07:15:53 -0600
+Started GET "/posts" for ::1 at 2021-08-27 07:15:53 -0600
+Processing by CategoriesController#index as HTML
+Processing by PostsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-08-27 07:15:53 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mCategory Load (2.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 2.6ms | Allocations: 2556)
+
+
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 86ms (Views: 0.2ms | ActiveRecord: 45.3ms | Allocations: 7505)
+
+
+  [1m[36mCategory Load (3.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 101ms (Views: 54.9ms | ActiveRecord: 45.8ms | Allocations: 11114)
+
+

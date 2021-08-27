@@ -11,7 +11,7 @@ export default function PostEdit(props) {
   useEffect(()=> {
     const prefillFormData = () => {
       const postItem = posts.find((post)=> post.id === Number(id));
-      setFormData({ name: postItem.name })
+      setFormData({ postItem })
     }
     if (posts.length) {
       prefillFormData()
