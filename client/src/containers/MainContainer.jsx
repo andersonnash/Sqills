@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom'
 
 import { getAllPosts, postPosts, putPost, deletePost } from '../services/posts';
 import { getAllCategories } from '../services/categories';
@@ -16,6 +17,8 @@ const MainContainer = (props) => {
   const [categories, setCategories] = useState([]);
   const { currentUser } = props
   const history = useHistory()
+  const { id } = useParams();
+
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -50,7 +53,7 @@ const MainContainer = (props) => {
 
   const handleDelete = async (id) => {
     await deletePost(id);
-    setPosts((prevState) => prevState.filter((food) => food.id !== id));
+    setPosts((prevState) => prevState.filter((post) => post.id !== id));
   };
 
   return (
@@ -59,7 +62,7 @@ const MainContainer = (props) => {
         <Route path='/categories'>
           <Categories categories={categories} />
         </Route>
-        <Route path='/edit'>
+        <Route path={`/edit/${id}`}>
           <PostEdit posts={posts} handleUpdate={handleUpdate} />
         </Route>
         <Route path='/posts/new'>

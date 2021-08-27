@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-import { getOnePost } from '../../services/posts';
 
 
 export default function PostEdit(props) {
@@ -44,7 +43,7 @@ export default function PostEdit(props) {
         <input 
           type='text' 
           name='title' 
-          value={formData.name} 
+          value={formData?.title} 
           onChange={handleChange}
         />
       </label>
@@ -53,7 +52,7 @@ export default function PostEdit(props) {
         <input 
           type='text' 
           name='description' 
-          value={formData.description} 
+          value={formData?.description} 
           onChange={handleChange}
         />
       </label>
@@ -62,7 +61,7 @@ export default function PostEdit(props) {
         <input 
           type='text' 
           name='image_url' 
-          value={formData.image_url} 
+          value={formData?.image_url} 
           onChange={handleChange}
         />
       </label>
