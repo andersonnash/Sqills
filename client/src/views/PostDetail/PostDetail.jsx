@@ -36,7 +36,7 @@ export default function PostDetail(props) {
       <img src={postItem?.image_url}></img>
       <h3>{postItem?.description}</h3>
       <button>
-        <Link to='/edit'>Edit</Link>
+        <Link to={`/edit/${id}`}>Edit</Link>
         </button>
     </div>
   );

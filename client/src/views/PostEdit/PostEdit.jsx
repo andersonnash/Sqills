@@ -1,17 +1,23 @@
 import { useState, useEffect } from 'react'
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { getOnePost } from '../../services/posts';
+
 
 export default function PostEdit(props) {
+
   const [formData, setFormData] = useState({
-    name: ''
+    title: '',
+    description: '',
+    image_url: ''
   })
-  const {posts, handleUpdate} = props;
-  const {id} = useParams();
+  const { posts, handleUpdate } = props;
+  const { id } = useParams();
+
 
   useEffect(()=> {
     const prefillFormData = () => {
-      const postItem = posts.find((post)=> post.id === Number(id));
-      setFormData({ postItem })
+      const postItem = posts.find((post) => post.id === Number(id));
+      setFormData(postItem)
     }
     if (posts.length) {
       prefillFormData()
@@ -34,11 +40,29 @@ export default function PostEdit(props) {
 			}}
       >
       <label>
-        Name:
+        Title:
         <input 
           type='text' 
-          name='name' 
+          name='title' 
           value={formData.name} 
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Description:
+        <input 
+          type='text' 
+          name='description' 
+          value={formData.description} 
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Image:
+        <input 
+          type='text' 
+          name='image_url' 
+          value={formData.image_url} 
           onChange={handleChange}
         />
       </label>
