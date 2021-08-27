@@ -18,6 +18,8 @@ export default function SignUp(props) {
 
   return (
     <form
+    class="h-screen flex flex-col 
+    items-center justify-center"
       onSubmit={(e) => {
         e.preventDefault();
         handleRegister(formData);
@@ -27,7 +29,11 @@ export default function SignUp(props) {
       <label>
         Username:
         <input
+          class="text-sm text-gray-base w-full 
+          mr-3 py-5 px-4 h-2 border 
+          border-gray-200 rounded mb-2"
           type='text'
+          class='rounded underline'
           name='username'
           value={formData.username}
           onChange={handleChange}
@@ -37,7 +43,11 @@ export default function SignUp(props) {
       <label>
         Email:
         <input
-          type='text'
+          class="text-sm text-gray-base w-full 
+          mr-3 py-5 px-4 h-2 border 
+          border-gray-200 rounded mb-2"
+          type='email'
+          class='rounded'
           name='email'
           value={formData.email}
           onChange={handleChange}
@@ -47,7 +57,11 @@ export default function SignUp(props) {
       <label>
         Password:
         <input
+          class="text-sm text-gray-base w-full 
+          mr-3 py-5 px-4 h-2 border 
+          border-gray-200 rounded mb-2"
           type='password'
+          class='rounded'
           name='password'
           value={formData.password}
           onChange={handleChange}
