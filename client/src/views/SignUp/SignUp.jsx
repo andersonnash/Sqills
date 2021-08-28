@@ -17,34 +17,30 @@ export default function SignUp(props) {
   };
 
   return (
-    <form
-    class="h-screen flex flex-col 
-    items-center justify-center"
+<div class='min-h-screen flex items-center justify-center bg-blue-900'>
+      <div class='bg-gray-50 opacity-100 p-16 rounded-lg shadow-2xl w-2/3'>
+      <h2 class="font-chau text-3xl font-bold mb-10 text-purple-700">Register</h2>
+    <form class='space-y-1'
       onSubmit={(e) => {
         e.preventDefault();
         handleRegister(formData);
       }}
     >
-      <h3>Register</h3>
-      <label>
+      <label class="block mb-1 font-bold text-small text-gray-600">
         Username:
         <input
-          class="text-sm text-gray-base w-full 
-          mr-3 py-5 px-4 h-2 border 
-          border-gray-200 rounded mb-2"
           type='text'
+          class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
           name='username'
           value={formData.username}
           onChange={handleChange}
         />
       </label>
       <br />
-      <label>
+      <label class="block mb-1 font-bold text-small text-gray-600">
         Email:
         <input
-          class="text-sm text-gray-base w-full 
-          mr-3 py-5 px-4 h-2 border 
-          border-gray-200 rounded mb-2"
+          class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
           type='email'
           name='email'
           value={formData.email}
@@ -52,21 +48,20 @@ export default function SignUp(props) {
         />
       </label>
       <br />
-      <label>
+      <label class="block mb-1 font-bold text-small text-gray-600">
         Password:
         <input
-          class="text-sm text-gray-base w-full 
-          mr-3 py-5 px-4 h-2 border 
-          border-gray-200 rounded mb-2"
+          class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
           type='password'
           name='password'
           value={formData.password}
           onChange={handleChange}
         />
-      </label>
+        </label>
       <br />
-      <button>Submit</button>
-    </form> 
-
+      <button class="block w-full bg-purple-400 hover:bg-purple-300 p-4 rounded-lg text-purple-800 transition duration-300">Submit</button>
+    </form>
+      </div>
+  </div>
   );
 }
