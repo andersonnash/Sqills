@@ -10,6 +10,7 @@ import PostCreate from '../views/PostCreate/PostCreate';
 import PostEdit from '../views/PostEdit/PostEdit'
 import PostDetail from '../views/PostDetail/PostDetail'
 import CategoryPosts from '../views/CategoryPosts/CategoryPosts'
+import UserPosts from '../views/UserPosts/UserPosts'
 
 import React from 'react'
 
@@ -61,6 +62,10 @@ const MainContainer = (props) => {
   return (
     <div>
       <Switch>
+        <Route path='/users/:id'>
+          <UserPosts posts={posts} handleDelete={handleDelete}
+            currentUser={currentUser}/>
+        </Route>
         <Route path='/categories'>
           <Categories categories={categories} />
         </Route>
@@ -76,8 +81,7 @@ const MainContainer = (props) => {
         <Route path='/posts'>
           <Posts
             posts={posts}
-            handleDelete={handleDelete}
-            currentUser={currentUser}
+
           />
         </Route>
         <Route exact path='/category/:id'>

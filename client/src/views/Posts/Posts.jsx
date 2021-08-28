@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 const Posts = (props) => {
   const { posts, handleDelete, currentUser } = props;
   return (
-    <div class=''>
     <div class="md:container md:mx-auto px-20 flex flex-wrap items-start my-16 ">
       <div class="lg-w-1/4 w-full lg:pr-3">
-        <h2 class="text-6xl font-bold mb-2">Your Activities</h2>
+        <h2 class="text-6xl font-bold mb-2">All Activities</h2>
         <div class=" rounded-xl relative">
           {posts?.map((post) => (
             <div key={post.id}>
@@ -19,14 +18,6 @@ const Posts = (props) => {
                 class="object-cover w-full rounded-xl"
               />
                 <p class="flex text-lg font-bold justify-center text-gray-800 leading-relaxed mb-32">{post?.description}</p>
-              {currentUser?.id === post.user_id && (
-                <div>
-                  <Link to={`/posts/${post.id}/edit`}>
-                    <button>Edit</button>
-                  </Link>
-                  <button onClick={() => handleDelete(post.id)}>Delete</button>
-              </div>
-              )}
             </div>
           ))}
           <Link to="/posts/new">
@@ -35,7 +26,6 @@ const Posts = (props) => {
         </div>
       </div>
       </div>
-    </div>
     
 
   );
