@@ -1,84 +1,86 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-
-export default function PostEdit(props) {  
+export default function PostEdit(props) {
   const { posts, handleUpdate } = props;
   const { id } = useParams();
   const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    image_url: '',
-  })
+    title: "",
+    description: "",
+    image_url: "",
+  });
 
-  const {
-    title,
-    description,
-    image_url,
-  } = formData
+  const { title, description, image_url } = formData;
 
   useEffect(() => {
     const prefillFormData = () => {
-      const singlePost = posts?.find((post) => post.id === Number(id))
+      const singlePost = posts?.find((post) => post.id === Number(id));
       setFormData({
         title: singlePost.title,
         description: singlePost.description,
         image_url: singlePost.image_url,
-      })
-    }
+      });
+    };
     // const prefillFormData = () => {
     //   const postItem = posts.find((post) => post.id === Number(id));
     //   setFormData(postItem)
-   
+
     if (posts.length) {
       prefillFormData();
     }
-  }, [id, posts])
-
+  }, [id, posts]);
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   return (
-    <form
-    onSubmit={(e) => {
-				e.preventDefault();
-				handleUpdate(id, formData);
-			}}
-      >
-      <label>
-        Title:
-        <input 
-          type='text' 
-          name='title' 
-          value={title} 
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Description:
-        <input 
-          type='text' 
-          name='description' 
-          value={description} 
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Image:
-        <input 
-          type='text' 
-          name='image_url' 
-          value={image_url} 
-          onChange={handleChange}
-        />
-      </label>
-      <button>Submit</button>
-      </form>
-  )
-};
+    <div class="min-h-screen flex items-center justify-center bg-blue-100">
+      <div class="bg-white p-16 rounded-lg shadow-2xl w-2/3">
+        <h2 class="text-5xl font-bold mb-10 text-gray-900">Edit</h2>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleUpdate(id, formData);
+          }}
+        >
+          <label class="block mb-1 font-bold text-xl text-gray-900">
+            Title
+            <input
+              type="text"
+              class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+              name="title"
+              value={title}
+              onChange={handleChange}
+            />
+          </label>
+          <label class="block mb-1 font-bold text-xl text-gray-900">
+            Description
+            <input
+              type="text"
+              class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+              name="description"
+              value={description}
+              onChange={handleChange}
+            />
+          </label>
+          <label class="block mb-1 font-bold text-xl text-gray-900">
+            Image
+            <input
+              type="text"
+              class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+              name="image_url"
+              value={image_url}
+              onChange={handleChange}
+            />
+          </label>
+          <button>Submit</button>
+        </form>
+      </div>
+    </div>
+  );
+}

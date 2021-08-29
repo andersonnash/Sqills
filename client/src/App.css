@@ -22,7 +22,8 @@
 
 
 
-h2 {
+h2,
+h1 {
   font-family: 'Halant', serif;
 /* font-family: 'Nunito Sans', sans-serif; */
 }
