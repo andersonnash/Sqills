@@ -8,7 +8,7 @@ export default function PostCreate(props) {
     title: "",
     description: "",
     image_url: "",
-    category: "",
+    category_id: "",
   });
   // const { title, image_url, description } = formData;
   const { handleCreate, categories } = props;
@@ -33,14 +33,14 @@ export default function PostCreate(props) {
   };
   const [selectedCat, setSelectedCat] = useState("default");
 
-  const handleCategoryChange = (event) => {
-    setSelectedCat(event.target.value);
-  };
+  // const handleCategoryChange = (event) => {
+  //   setSelectedCat(event.target.value);
+  // };
 
   return (
-    <div class="min-h-screen flex items-center justify-center bg-blue-100">
-      <div class="bg-white p-16 rounded-lg shadow-2xl w-2/3">
-        <h2 class="text-5xl font-bold mb-10 text-gray-900">Add Activity</h2>
+    <div className="min-h-screen flex items-center justify-center bg-blue-100">
+      <div className="bg-white p-16 rounded-lg shadow-2xl w-2/3">
+        <h2 className="text-5xl font-bold mb-10 text-gray-900">Add Activity</h2>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -48,55 +48,58 @@ export default function PostCreate(props) {
           }}
         >
           {/* <h3>New Activity</h3> */}
-          <label class="block mb-1 font-bold text-xl text-gray-900">
+          <label className="block mb-1 font-bold text-xl text-gray-900">
             Title
             <input
               type="text"
-              class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+              className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
               name="title"
               value={formData.title}
               onChange={handleChange}
             />
           </label>
-          <label class="block mb-1 font-bold text-xl text-gray-900">
+          <label className="block mb-1 font-bold text-xl text-gray-900">
             Description
             <input
               type="text"
-              class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+              className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
               name="description"
               value={formData.description}
               onChange={handleChange}
             />
           </label>
-          <label class="block mb-1 font-bold text-xl text-gray-900">
+          <label className="block mb-1 font-bold text-xl text-gray-900">
             Image
             <input
               type="text"
-              class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+              className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
               name="image_url"
               value={formData.image_url}
               onChange={handleChange}
             />
           </label>
+          <label className="block mb-1 font-bold text-xl text-gray-900">
+            Categories
           <select
-            value={selectedCat}
+            className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+            value={formData.category_id}
             placeholder="Category"
-            onChange={handleCategoryChange}
+            onChange={handleChange}
+            name='category_id'
           >
-                        
             <option disabled value="default">
-                            All Categories             
-            </option>
-                        
+              All Categories             
+            </option>     
             {categories?.map((category) => (
-              <option value={category.name} key={category.id}>
+              <option value={category.id} key={category.id}>
                                 {category.name}
                               
               </option>
             ))}
                       
-          </select>
-          <button class="block my-6 py-1 w-1/3 w-full bg-gray-400 hover:bg-blue-600 p-4 rounded-lg text-xl text-gray-900 font-bold transition duration-300">
+            </select>
+            </label>
+          <button className="block my-6 py-1 w-1/3 w-full bg-gray-400 hover:bg-blue-600 p-4 rounded-lg text-xl text-gray-900 font-bold transition duration-300">
             Submit
           </button>
         </form>

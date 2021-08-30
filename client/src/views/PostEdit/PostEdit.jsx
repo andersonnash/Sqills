@@ -39,40 +39,40 @@ export default function PostEdit(props) {
   };
 
   return (
-    <div class="min-h-screen flex items-center justify-center bg-blue-100">
-      <div class="bg-white p-16 rounded-lg shadow-2xl w-2/3">
-        <h2 class="text-5xl font-bold mb-10 text-gray-900">Edit</h2>
+    <div className="min-h-screen flex items-center justify-center bg-blue-100">
+      <div className="bg-white p-16 rounded-lg shadow-2xl w-2/3">
+        <h2 className="text-5xl font-bold mb-10 text-gray-900">Edit</h2>
         <form
           onSubmit={(e) => {
             e.preventDefault();
             handleUpdate(id, formData);
           }}
         >
-          <label class="block mb-1 font-bold text-xl text-gray-900">
+          <label className="block mb-1 font-bold text-xl text-gray-900">
             Title
             <input
               type="text"
-              class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+              className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
               name="title"
               value={title}
               onChange={handleChange}
             />
           </label>
-          <label class="block mb-1 font-bold text-xl text-gray-900">
+          <label className="block mb-1 font-bold text-xl text-gray-900">
             Description
             <input
               type="text"
-              class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+              className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
               name="description"
               value={description}
               onChange={handleChange}
             />
           </label>
-          <label class="block mb-1 font-bold text-xl text-gray-900">
+          <label className="block mb-1 font-bold text-xl text-gray-900">
             Image
             <input
               type="text"
-              class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+              className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
               name="image_url"
               value={image_url}
               onChange={handleChange}

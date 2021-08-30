@@ -17,30 +17,30 @@ export default function SignUp(props) {
   };
 
   return (
-<div class='min-h-screen flex items-center justify-center bg-blue-100'>
-      <div class='bg-white p-16 rounded-lg shadow-2xl w-2/3'>
-      <h2 class="text-5xl font-bold mb-10 text-gray-900">Register</h2>
-    <form class='space-y-1'
+<div className='min-h-screen flex items-center justify-center bg-blue-100'>
+      <div className='bg-white p-16 rounded-lg shadow-2xl w-2/3'>
+      <h2 className="text-5xl font-bold mb-10 text-gray-900">Register</h2>
+    <form className='space-y-1'
       onSubmit={(e) => {
         e.preventDefault();
         handleRegister(formData);
       }}
     >
-      <label class="block mb-1 font-bold text-xl text-gray-900">
+      <label className="block mb-1 font-bold text-xl text-gray-900">
         Username
         <input
           type='text'
-          class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+          className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
           name='username'
           value={formData.username}
           onChange={handleChange}
         />
       </label>
       <br />
-      <label class="block mb-1 font-bold text-xl text-gray-900">
+      <label className="block mb-1 font-bold text-xl text-gray-900">
         Email
         <input
-          class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+          className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
           type='email'
           name='email'
           value={formData.email}
@@ -48,10 +48,10 @@ export default function SignUp(props) {
         />
       </label>
       <br />
-      <label class="block mb-1 font-bold text-xl text-gray-900">
+      <label className="block mb-1 font-bold text-xl text-gray-900">
         Password
         <input
-          class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
+          className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
           type='password'
           name='password'
           value={formData.password}
@@ -59,7 +59,7 @@ export default function SignUp(props) {
         />
         </label>
       <br />
-      <button class="block w-full bg-gray-400 hover:bg-blue-600 p-4 rounded-lg text-xl text-gray-900 font-bold transition duration-300">Submit</button>
+      <button className="block w-full bg-gray-400 hover:bg-blue-600 p-4 rounded-lg text-xl text-gray-900 font-bold transition duration-300">Submit</button>
     </form>
       </div>
   </div>

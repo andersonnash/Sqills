@@ -46,7 +46,7 @@ const MainContainer = (props) => {
   };
 
   const handleUpdate = async (id, formData) => {
-    const postData = await putPost(formData);
+    const postData = await putPost(id, formData);
     setPosts((prevState) =>
       prevState.map((post) => {
         return post.id === Number(id) ? postData : post;

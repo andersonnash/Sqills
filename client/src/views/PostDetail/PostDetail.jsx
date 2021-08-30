@@ -18,13 +18,13 @@ export default function PostDetail(props) {
   }, [id]);
 
   return (
-    <div class=" flex justify-center md:container md:mx-auto px-20 flex flex-wrap items-start my-16 ">
+    <div className=" flex justify-center md:container md:mx-auto px-20 flex flex-wrap items-start my-16 ">
       <h1>{postItem?.title}</h1>
-      <img class="rounded-lg" src={postItem?.image_url} />
-      <div class="flex">
+      <img className="rounded-lg" src={postItem?.image_url} />
+      <div className="flex">
         <p>{postItem?.description}</p>
       </div>
-      <button class="inline-block px-2 py-1 w-1/3 bg-gray-400 hover:bg-blue-600 p-4 rounded-lg text-lg text-gray-900 font-bold transition duration-300 my-6">
+      <button className="inline-block px-2 py-1 w-1/3 bg-gray-400 hover:bg-blue-600 p-4 rounded-lg text-lg text-gray-900 font-bold transition duration-300 my-6">
         <Link to={`/edit/${id}`}>Edit</Link>
       </button>
     </div>
