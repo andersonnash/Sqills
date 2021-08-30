@@ -10,7 +10,7 @@ export default function PostCreate(props) {
     image_url: "",
     category: "",
   });
-  // const { name } = formData;
+  // const { title, image_url, description } = formData;
   const { handleCreate, categories } = props;
   const { id } = props;
   const handleChange = (e) => {

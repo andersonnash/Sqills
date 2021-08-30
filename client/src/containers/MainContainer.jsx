@@ -3,7 +3,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 // import { useParams } from 'react-router-dom'
 
 import { getAllPosts, postPosts, putPost, deletePost } from '../services/posts';
-import { getAllCategories } from '../services/categories';
+import { getAllCategories, addCategoryToPost } from '../services/categories';
 import Categories from '../views/Categories/Categories'
 import Posts from '../views/Posts/Posts'
 import PostCreate from '../views/PostCreate/PostCreate';
@@ -59,18 +59,18 @@ const MainContainer = (props) => {
     setPosts((prevState) => prevState.filter((post) => post.id !== id));
   };
 
-  // const handleCategoryAdd = async (categoryId, articleId) => {
-  //   const updatedArticle = await addCategoryToArticle(categoryId, articleId);
-  //   setArticles((prevState) =>
-  //     prevState.map((article) => {
-  //       return article.articleId === Number(articleId)
-  //         ? updatedArticle
-  //         : article;
-  //     })
-  //   );
-  //   props.setToggleFetch((prev) => !prev);
-  //   history.push(`/articles/${articleId}`);
-  // };
+  const handleCategoryAdd = async (categoryId, postId) => {
+    const updatedCategory = await addCategoryToPost(categoryId, postId);
+    setPosts((prevState) =>
+      prevState.map((post) => {
+        return categories.postId === Number(postId)
+          ? updatedCategory
+          : post;
+      })
+    );
+    props.setToggleFetch((prev) => !prev);
+    history.push(`/posts/${postId}`);
+  };
 
   return (
     <div>
@@ -83,18 +83,23 @@ const MainContainer = (props) => {
           <Categories categories={categories} />
         </Route>
         <Route path= '/edit/:id'>
-          <PostEdit posts={posts} handleUpdate={handleUpdate}
-            // handleCategoryAdd={handleCategoryAdd}
+          <PostEdit
+            posts={posts}
+            categories={categories}
+            handleUpdate={handleUpdate}
+            handleCategoryAdd={handleCategoryAdd}
           />
         </Route>
         <Route path='/posts/new'>
           <PostCreate handleCreate={handleCreate}
             categories={categories}
-            // handleCategoryAdd={handleCategoryAdd}
+            posts={posts}
+            handleCategoryAdd={handleCategoryAdd}
           />
         </Route>
         <Route path='/posts/:id'>
-          <PostDetail categories={categories} />
+          <PostDetail
+            categories={categories} />
         </Route>
         <Route path='/posts'>
           <Posts
