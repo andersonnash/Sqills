@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 const Posts = (props) => {
   const { posts, handleDelete, currentUser } = props;
   return (
-    <div class="md:container md:mx-auto px-20 flex flex-wrap items-start my-16 ">
-      <div class="lg-w-1/4 w-full lg:pr-3">
+    <div class='border-black'>
+    <div class="md:container md:mx-auto px-20 flex flex-wrap items-start my-16 lg:container lg:grid grid-cols-3">
+      <div class="lg-w-1/4 w-full lg:pr-3 ">
         <h2 class="text-6xl font-bold mb-2">All Activities</h2>
         <div class=" rounded-xl relative">
           {posts?.map((post) => (
@@ -26,7 +27,7 @@ const Posts = (props) => {
         </div>
       </div>
       </div>
-    
+      </div>
 
   );
 };

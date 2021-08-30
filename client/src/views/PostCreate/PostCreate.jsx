@@ -4,15 +4,14 @@ import { addCategoryToPost } from "../../services/categories";
 export default function PostCreate(props) {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [postItem, setPostItem] = useState(null);
-
   const [formData, setFormData] = useState({
     title: "",
     description: "",
     image_url: "",
     category: "",
   });
-  // const { Name } = formData;
-  const { handleCreate } = props;
+  // const { name } = formData;
+  const { handleCreate, categories } = props;
   const { id } = props;
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +22,7 @@ export default function PostCreate(props) {
   };
 
   //   const handleChange = (e) => {
-  //   const { value } = e.target;
+  //   const {name, value } = e.target;
   //   setSelectedCategory(value);
   // };
 
@@ -31,6 +30,11 @@ export default function PostCreate(props) {
     e.preventDefault();
     const postItem = await addCategoryToPost(id, selectedCategory);
     setPostItem(postItem);
+  };
+  const [selectedCat, setSelectedCat] = useState("default");
+
+  const handleCategoryChange = (event) => {
+    setSelectedCat(event.target.value);
   };
 
   return (
@@ -74,18 +78,27 @@ export default function PostCreate(props) {
               onChange={handleChange}
             />
           </label>
-          <label class="block mb-1 font-bold text-xl text-gray-900">
-            Category
-            <input
-              type="text"
-              class="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-400"
-              name="category"
-              value={formData.category}
-              onChange={handleChange}
-            />
-          </label>
-
-          <button class="block my-6 py-1 w-1/3 w-full bg-gray-400 hover:bg-blue-600 p-4 rounded-lg text-xl text-gray-900 font-bold transition duration-300">Submit</button>
+          <select
+            value={selectedCat}
+            placeholder="Category"
+            onChange={handleCategoryChange}
+          >
+                        
+            <option disabled value="default">
+                            All Categories             
+            </option>
+                        
+            {categories?.map((category) => (
+              <option value={category.name} key={category.id}>
+                                {category.name}
+                              
+              </option>
+            ))}
+                      
+          </select>
+          <button class="block my-6 py-1 w-1/3 w-full bg-gray-400 hover:bg-blue-600 p-4 rounded-lg text-xl text-gray-900 font-bold transition duration-300">
+            Submit
+          </button>
         </form>
       </div>
     </div>

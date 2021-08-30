@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const CategoryPosts = () => {
   const [catData, setCatData] = useState(null)
   const { id } = useParams();
+
   useEffect(() => {
     const fetchCategory = async () => {
       const singleCategory = await getOneCategory(id);
@@ -14,7 +15,7 @@ const CategoryPosts = () => {
     };
     fetchCategory();
   }, [id]);
-  console.log(catData)
+ 
 
   return (
     <div>

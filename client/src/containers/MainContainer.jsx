@@ -59,6 +59,19 @@ const MainContainer = (props) => {
     setPosts((prevState) => prevState.filter((post) => post.id !== id));
   };
 
+  // const handleCategoryAdd = async (categoryId, articleId) => {
+  //   const updatedArticle = await addCategoryToArticle(categoryId, articleId);
+  //   setArticles((prevState) =>
+  //     prevState.map((article) => {
+  //       return article.articleId === Number(articleId)
+  //         ? updatedArticle
+  //         : article;
+  //     })
+  //   );
+  //   props.setToggleFetch((prev) => !prev);
+  //   history.push(`/articles/${articleId}`);
+  // };
+
   return (
     <div>
       <Switch>
@@ -70,10 +83,15 @@ const MainContainer = (props) => {
           <Categories categories={categories} />
         </Route>
         <Route path= '/edit/:id'>
-          <PostEdit posts={posts} handleUpdate={handleUpdate} />
+          <PostEdit posts={posts} handleUpdate={handleUpdate}
+            // handleCategoryAdd={handleCategoryAdd}
+          />
         </Route>
         <Route path='/posts/new'>
-          <PostCreate handleCreate={handleCreate} />
+          <PostCreate handleCreate={handleCreate}
+            categories={categories}
+            // handleCategoryAdd={handleCategoryAdd}
+          />
         </Route>
         <Route path='/posts/:id'>
           <PostDetail categories={categories} />
