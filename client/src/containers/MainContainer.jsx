@@ -107,6 +107,11 @@ const MainContainer = (props) => {
 
           />
         </Route>
+        <Route exact path='/'>
+          <Posts
+            posts={posts}
+          />
+        </Route>
         <Route exact path='/category/:id'>
           <CategoryPosts />
         </Route>
