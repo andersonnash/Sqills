@@ -5,10 +5,6 @@ export default function Layout(props) {
   const { currentUser, handleLogout } = props;
   return (
     <header>
-      {/* <Route>
-      <Nav/>
-      </Route> */}
-      
       {currentUser ? (
         
         <div className=" flex justify-between items-center my-6">
