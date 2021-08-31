@@ -42,6 +42,7 @@ export default function Layout(props) {
       )}
       {props.children}
       </header>
+      <hr />
       <Footer/>
       </div>
     
