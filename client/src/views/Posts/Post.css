@@ -1,0 +1,21 @@
+.postsContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  justify-content: space-evenly;
+  width: 95%;
+}
+
+.postCard{
+  border: 2px solid lightgray;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 500px;
+  
+}
+
+
+
