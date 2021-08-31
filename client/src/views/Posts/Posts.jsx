@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Posts = (props) => {
-  const { posts, handleDelete, currentUser } = props;
+  const { posts } = props;
   return (
     <div className=''>
     <div className=" md:container md:mx-auto px-20 flex flex-wrap items-start my-16 lg:grid-cols-3">
