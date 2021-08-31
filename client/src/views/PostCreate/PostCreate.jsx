@@ -2,8 +2,6 @@ import { useState } from "react";
 import { addCategoryToPost } from "../../services/categories";
 
 export default function PostCreate(props) {
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [postItem, setPostItem] = useState(null);
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -20,14 +18,6 @@ export default function PostCreate(props) {
     }));
   };
 
-
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const postItem = await addCategoryToPost(id, selectedCategory);
-    setPostItem(postItem);
-  };
-  const [selectedCat, setSelectedCat] = useState("default");
 
 
   return (
