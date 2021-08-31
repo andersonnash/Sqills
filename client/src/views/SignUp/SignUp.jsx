@@ -17,9 +17,11 @@ export default function SignUp(props) {
   };
 
   return (
-<div className='min-h-screen flex items-center justify-center bg-blue-100'>
-      <div className='bg-white p-16 rounded-lg shadow-2xl w-2/3'>
-      <h2 className="text-5xl font-bold mb-10 text-gray-900">Register</h2>
+    
+    <div className='min-h-screen flex items-center justify-center bg-blue-100  '>
+      {/* <div className='my-4 md:flex md:flex-wrap md:justify-between '> */}
+      <div className='bg-white p-16 rounded-lg shadow-2xl w-100'>
+      <h2 className=" flex justify-center text-5xl font-bold mb-10 text-gray-900">Register</h2>
     <form className='space-y-1'
       onSubmit={(e) => {
         e.preventDefault();
@@ -62,6 +64,7 @@ export default function SignUp(props) {
       <button className="block w-full bg-gray-400 hover:bg-blue-600 p-4 rounded-lg text-xl text-gray-900 font-bold transition duration-300">Submit</button>
     </form>
       </div>
-  </div>
+      </div>
+      // </div>
   );
 }

@@ -31,8 +31,8 @@ export default function Layout(props) {
       {/* <hr /> */}
       {currentUser && (
         <div>
-          <Link className=" inline-block px-2 py-1 w-1/3 bg-gray-400 hover:bg-blue-600 p-4 rounded-lg text-lg text-gray-900  transition duration-300 m-6" to='/users/1'>Your Activities</Link>
-          <Link className=" inline-block px-2 py-1 w-1/3 bg-gray-400 hover:bg-blue-600 p-4 rounded-lg text-lg text-gray-900  transition duration-300" to='/categories'>All Categories</Link>
+          <Link className=" inline-block px-2 py-1 w-1/3 bg-gray-400 hover:bg-blue-600 p-4 opacity-50 rounded-lg text-lg text-gray-900  transition duration-300 m-6" to='/users/1'>Your Activities</Link>
+          <Link className=" inline-block px-2 py-1 w-1/3 bg-gray-400 hover:bg-blue-600 p-4 opacity-50 rounded-lg text-lg text-gray-900  transition duration-300" to='/categories'>All Categories</Link>
         </div>
       )}
       {props.children}

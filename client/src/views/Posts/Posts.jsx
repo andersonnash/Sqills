@@ -4,7 +4,7 @@ const Posts = (props) => {
   const { posts, handleDelete, currentUser } = props;
   return (
     <div className='border-black'>
-    <div className="md:container md:mx-auto px-20 flex flex-wrap items-start my-16 lg:container lg:grid grid-cols-3">
+    <div className="md:container md:mx-auto px-20 flex flex-wrap items-start my-16 lg:grid-cols-3">
       <div className="lg-w-1/4 w-full lg:pr-3 ">
         <h2 className="text-6xl font-bold mb-2">All Activities</h2>
         <div className=" rounded-xl relative">

@@ -40,7 +40,7 @@ export default function PostEdit(props) {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-blue-100">
-      <div className="bg-white p-16 rounded-lg shadow-2xl w-2/3">
+      <div className="bg-white p-16 rounded-lg shadow-2xl w-100">
         <h2 className="text-5xl font-bold mb-10 text-gray-900">Edit</h2>
         <form
           onSubmit={(e) => {
