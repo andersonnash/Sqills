@@ -29,9 +29,6 @@ export default function PostCreate(props) {
   };
   const [selectedCat, setSelectedCat] = useState("default");
 
-  // const handleCategoryChange = (event) => {
-  //   setSelectedCat(event.target.value);
-  // };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-blue-100">
