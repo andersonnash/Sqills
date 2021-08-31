@@ -17,7 +17,7 @@ export default function PostDetail(props) {
 
   return (
     <div className=" flex justify-center md:container md:mx-auto px-20 flex flex-wrap items-start my-16 ">
-      <h1>{postItem?.title}</h1>
+      <h2 className='text-2xl font-bold'>{postItem?.title}</h2>
       <img className="rounded-lg" src={postItem?.image_url} />
       <div className="flex">
         <p>{postItem?.description}</p>
