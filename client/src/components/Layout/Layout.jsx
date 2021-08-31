@@ -24,11 +24,13 @@ export default function Layout(props) {
             </div>
       ) : (
           <>
-         {/* <div className='flex items-center'> */}
-          <h1 className='flex justify-center text-xl font-bold ml-12 text-5xl'>SQILLS</h1>
+         <div className='flex items-center'>
+            <h1 className='flex justify-center text-xl font-bold ml-12 text-5xl'>SQILLS</h1>
+            <div className='flex justify-end'>
           <Link className=" justify-end inline-block px-2 py-1 w-5/16 bg-gray-400 hover:bg-blue-600 p-4 opacity-50 rounded-lg text-lg text-gray-900  transition duration-300 m-6" to='/signup'>Register</Link>
           <Link className=" inline-block px-4 py-1 w-5/16 bg-gray-400 hover:bg-blue-600 p-4 opacity-50 rounded-lg text-lg text-gray-900  transition duration-300 m-6" to='/Login'>Login</Link>
-        {/* </div> */}
+              </div>
+              </div>
             </>
       )}
       {/* <hr /> */}
