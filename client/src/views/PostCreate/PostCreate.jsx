@@ -20,10 +20,7 @@ export default function PostCreate(props) {
     }));
   };
 
-  //   const handleChange = (e) => {
-  //   const {name, value } = e.target;
-  //   setSelectedCategory(value);
-  // };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
