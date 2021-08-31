@@ -21,9 +21,7 @@ const Posts = (props) => {
                 <p className=" flex text-lg font-bold justify-center text-gray-800 leading-relaxed mb-32">{post?.description}</p>
             </div>
           ))}
-          {/* <Link to="/posts/new">
-            <button>Create</button>
-              </Link> */}
+
         </div>
       </div>
       </div>
