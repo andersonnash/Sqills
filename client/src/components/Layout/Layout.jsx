@@ -20,7 +20,7 @@ export default function Layout(props) {
             </Link>
           </div>
           {/* <div className='flex justify-end ml-6'> */}
-          <p className='hidden md:block  justify-start animate-bounce font-bold text-lg'> Welcome, {currentUser.username}!</p>
+          <p className='hidden md:block  justify-start font-bold text-lg font-bold'> Welcome, {currentUser.username}!</p>
             <button className=' inline-block px-2 py-1 w-5/16 bg-gray-400 hover:bg-blue-600 p-4 opacity-50 rounded-lg text-lg text-gray-900  transition duration-300 mr-4 text-lg font-bold ' onClick={handleLogout}>Logout</button>
             </div>
             // </div>

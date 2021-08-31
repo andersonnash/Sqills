@@ -33,7 +33,7 @@ export default function PostCreate(props) {
   return (
     <div className="min-h-screen flex items-center justify-center bg-blue-100">
       <div className="bg-white p-16 rounded-lg shadow-2xl w-100">
-        <h2 className=" flex justify-center text-5xl font-bold mb-6 text-gray-900">Add Activity</h2>
+        <h2 className=" flex justify-center text-5xl font-bold mb-6 text-gray-900">Show Us Your Sqills</h2>
         <form
           onSubmit={(e) => {
             e.preventDefault();

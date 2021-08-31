@@ -29,6 +29,7 @@ h1 {
 }
 button,
 label,
-p {
+p,
+link {
   font-family: 'Nunito Sans', sans-serif; 
 }
