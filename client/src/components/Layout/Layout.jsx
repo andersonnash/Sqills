@@ -35,7 +35,7 @@ export default function Layout(props) {
               </div>
             </>
       )}
-      {/* <hr /> */}
+      <hr />
       {currentUser && (
         <div className=''>
           <Link className=" inline-block px-2 py-1 w-1/3 bg-gray-400 hover:bg-blue-600 p-4 opacity-50 rounded-lg text-lg text-gray-900  transition duration-300 m-6" to='/users/1'>Your Activities</Link>
