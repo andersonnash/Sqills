@@ -21,9 +21,7 @@ export default function PostEdit(props) {
         image_url: singlePost.image_url,
       });
     };
-    // const prefillFormData = () => {
-    //   const postItem = posts.find((post) => post.id === Number(id));
-    //   setFormData(postItem)
+
 
     if (posts.length) {
       prefillFormData();
