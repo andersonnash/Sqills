@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
+import Footer from '../Layout/Footer/Footer'
 // import Nav from './Nav/Nav'
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
   return (
+    <div>
     <header>
       {currentUser ? (
         
@@ -39,6 +41,10 @@ export default function Layout(props) {
         </div>
       )}
       {props.children}
-    </header>
+      </header>
+      <hr />
+      <Footer/>
+      </div>
+    
   );
 }
