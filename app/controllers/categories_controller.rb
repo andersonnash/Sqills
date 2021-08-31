@@ -8,6 +8,14 @@ class CategoriesController < ApplicationController
     render json: @categories, include: :posts, status: :ok
   end
 
+    #POST custom method for association
+    def add_category_to_post
+      @post = Post.find(params[:id])
+      @category = Category.find(params[:category_id])
+  
+      @post.categories << @category
+    end
+
   # GET /categories/1
   def show
     render json: @category, include: :posts, status: :ok
