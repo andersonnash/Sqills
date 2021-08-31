@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { addCategoryToPost } from "../../services/categories";
 
 export default function PostCreate(props) {
   const [formData, setFormData] = useState({
@@ -9,7 +8,6 @@ export default function PostCreate(props) {
     category_id: "",
   });
   const { handleCreate, categories } = props;
-  const { id } = props;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
