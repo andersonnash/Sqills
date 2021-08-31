@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 export default function PostDetail(props) {
   const [postItem, setPostItem] = useState(null);
   const { id } = useParams();
-  // const { categories } = props;
 
   useEffect(() => {
     const fetchPostItem = async () => {
