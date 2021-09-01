@@ -61,7 +61,8 @@ _**Sqills** A user will be able to sign in or register for the app. Upon signing
 
 #### Wireframes
 
-![Sqills Wireframe]<iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/PqCpKczmHiSLjUjV5rgTpZ"></iframe>
+![Sqills Wireframe![Sqills](https://user-images.githubusercontent.com/82549011/131671468-78a0b891-0409-455f-8b37-7b336872ffbb.png)
+
 
 
 
