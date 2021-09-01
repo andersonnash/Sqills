@@ -61,7 +61,7 @@ _**Sqills** A user will be able to sign in or register for the app. Upon signing
 
 #### Wireframes
 
-![Sqills Wireframe](https://user-images.githubusercontent.com/82549011/130843056-c989019b-32ba-4607-bc70-8e1183c5bf80.png)
+![Sqills Wireframe]<iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/PqCpKczmHiSLjUjV5rgTpZ"></iframe>
 
 
 
@@ -88,16 +88,7 @@ src
       |__ Footer/
           |__ Footer.jsx
           |__ Footer.css
-      |__ Search/
-          |__ Search.jsx
-          |__ Search.css
-      |__ Sort/
-          |__ Sort.jsx
-          |__ Sort.css
 |__ screens/
-      |__ Home/
-          |__ Home.jsx
-          |__ Home.css
       |__ Posts/
           |__ Posts.jsx
           |__ Posts.css
@@ -119,7 +110,7 @@ src
 |__ services/
       |__ apiConfig.js
       |__ users.js
-      |__ articles.js
+      |__ posts.js
       |__ categories.js
 |__ utilities/
       |__ utilities.js
@@ -131,26 +122,26 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Pitch presentation    |    L     |     .5 hrs      |          |       |
-|  Backend CRUD       |    H     |     3 hrs      |        |     TBD     |
-| Auth                |    H     |     2 hrs      |        |     TBD     |
-| Seeding Data        |    H     |     2 hrs      |          |     TBD     |
-| Creating Frontend Comp |    H     |     3 hrs      |          |     TBD     |
-| Frontend CRUD       |    H     |     3 hrs      |          |     TBD     |
-| Landing Page Layout |    H     |     1 hrs      |        |     TBD     |
-| Detail Page Layout |    H     |     1 hrs      |         |     TBD     |
-| Edit Page Layout   |    H     |     1 hrs      |          |     TBD     |
-| Sign In/Sign Up Layout|    H     |     2 hrs      |          |     TBD     |
-| Create Page Layout |    H     |    1 hrs      |          |     TBD     |
-| Navbar             |    H     |     1 hrs      |          |     TBD     |
-| Basic CSS          |    H     |     3 hrs      |          |     TBD     |
-| Tailwind         |    H     |     3 hrs      |          |     TBD     |
-| Header             |    H     |     2 hrs      |          |     TBD     |
-| Advanced Landing Page |    H     |     3 hrs      |          |     TBD     |
-| Advanced Detail Page |    H     |     3 hrs      |          |     TBD     |
-| Advanced Edit Page |    H     |     3 hrs      |          |     TBD     |
-| Advanced Create Page |    H     |     3 hrs      |          |     TBD     |
-| TOTAL               |          |     37 hrs      |         |     TBD     |
+| Pitch presentation    |    L     |     .5 hrs      |     .5     |       |
+|  Backend CRUD       |    H     |     3 hrs      |    3    |     TBD     |
+| Auth                |    H     |     2 hrs      |     2   |     TBD     |
+| Seeding Data        |    H     |     2 hrs      |      2    |     TBD     |
+| Creating Frontend Comp |    H     |     3 hrs      |     3     |     TBD     |
+| Frontend CRUD       |    H     |     3 hrs      |     3     |     TBD     |
+| Landing Page Layout |    H     |     1 hrs      |    1    |     TBD     |
+| Detail Page Layout |    H     |     1 hrs      |     1    |     TBD     |
+| Edit Page Layout   |    H     |     1 hrs      |      1    |     TBD     |
+| Sign In/Sign Up Layout|    H     |     2 hrs      |   2       |     TBD     |
+| Create Page Layout |    H     |    1 hrs      |       1   |     TBD     |
+| Navbar             |    H     |     1 hrs      |     1     |     TBD     |
+| Basic CSS          |    H     |     3 hrs      |      3    |     TBD     |
+| Tailwind         |    H     |     3 hrs      |      3    |     TBD     |
+| Header             |    H     |     2 hrs      |     2     |     TBD     |
+| Advanced Landing Page |    H     |     3 hrs      |   3       |     TBD     |
+| Advanced Detail Page |    H     |     3 hrs      |     3     |     TBD     |
+| Advanced Edit Page |    H     |     3 hrs      |      3    |     TBD     |
+| Advanced Create Page |    H     |     3 hrs      |    3      |     TBD     |
+| TOTAL               |          |     37 hrs      |     40hrs    |     TBD     |
 
 
 
@@ -161,7 +152,8 @@ src
 #### ERD Model
 
 
-![ERD - Sqills (1)](https://user-images.githubusercontent.com/82549011/130820802-b7ef125a-10e2-4dca-8268-7a4072abe487.png)
+![Sqills-ERD](https://user-images.githubusercontent.com/82549011/131671270-08f6343f-4631-4f0e-831d-1daed1418c0f.png)
+
 
 <br>
 
@@ -176,6 +168,8 @@ src
 ***
 
 ## Code Showcase
+
+
 
 
 ## Code Issues & Resolutions
