@@ -7,6 +7,7 @@ export default function PostCreate(props) {
     image_url: "",
     category_id: "",
   });
+  
   const { handleCreate, categories } = props;
   const handleChange = (e) => {
     const { name, value } = e.target;

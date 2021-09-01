@@ -81,5 +81,55 @@ Post.create!(
   user: @evan,
   category: @running
 )
+Post.create!(
+  title: 'Straight Sending',
+  description: 'Getting gnarly on the north shore',
+  image_url: 'https://berkshireeast.com/sites/default/files/styles/max_2600x2600/public/2019-10/MtnBikeLesson3_1.jpg?itok=WcYKojgj',
+  user: @cam,
+  category: @mtb
+)
+Post.create!(
+  title: 'Sunset Hike',
+  description: 'Went on a beautiful sunset hike with friends today. It was magical',
+  image_url: 'https://media.istockphoto.com/photos/group-of-hikers-walks-in-mountains-at-sunset-picture-id1189969126?k=20&m=1189969126&s=612x612&w=0&h=6JPjSS9UORT-DAnIoa0mopA9lwFxX8tX8HQrJdb_i70=',
+  user: @shaz,
+  category: @hiking
+)
+Post.create!(
+  title: 'Brrrrr Baby',
+  description: 'Now, now. Perfectly symmetrical violence never solved anything.',
+  image_url: 'https://bostonglobe-prod.cdn.arcpublishing.com/resizer/tWy2ZygcJnC6-t_i3M_VAwXk69w=/1440x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/V2RAQC7W6NDODKOG4RNMSUA34I.JPG',
+  user: @evan,
+  category: @miscellaneous
+)
+Post.create!(
+  title: 'Don\'t. Be. Scared',
+  description: 'Love the feeling of the altitude up here',
+  image_url: 'https://img.redbull.com/images/c_crop,w_5122,h_3415,x_0,y_2529,f_auto,q_auto/c_scale,w_1500/redbullcom/2019/06/03/83ddcec2-b607-4def-a965-abb0b94fa412/how-to-take-indoor-climbing-outdoors',
+  user: @nash,
+  category: @climbing
+)
+Post.create!(
+  title: 'Running into the sunset like.',
+  description: 'Now, now. Perfectly symmetrical violence never solved anything.',
+  image_url: 'http://media.monsterindia.com/cmsimages/1509963788.jpg',
+  user: @cam,
+  category: @running
+)
+Post.create!(
+  title: 'Float Trip',
+  description: 'Being on the water soothes the soul.',
+  image_url: 'https://media.istockphoto.com/photos/woman-kayaking-in-fjord-in-norway-picture-id1059380230?k=20&m=1059380230&s=612x612&w=0&h=4uX7UZ05gPYZgq-TPqOEU_CP2MUzYn2rKO2448ihdjg=',
+  user: @nash,
+  category: @miscellaneous
+)
+Post.create!(
+  title: 'Took my first fall',
+  description: 'Now, now. Perfectly symmetrical violence never solved anything.',
+  image_url: 'http://voyageurtripper.com/wp-content/uploads/2019/04/Voyageur-Tripper-Dane-Jackson-Kayak-2.png',
+  user: @nash,
+  category: @miscellaneous
+)
+
 
 puts "#{Post.count} posts created."
