@@ -1,7 +1,6 @@
 # sqills
 # PROJECT 4 README <!-- omit in toc -->
-
-> The Project Planning section **should be completed** for your project pitch with instructors.
+https://goofy-newton-526a48.netlify.app/
 >
 > To ensure correct Markdown, copy and paste the raw template code into your project repo README file. Remove ALL template instructions and replace with your project details.
 
